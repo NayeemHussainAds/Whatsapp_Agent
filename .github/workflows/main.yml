@@ -8,9 +8,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: .
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+
+      - name: Debug Files
+        run: ls -R
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
